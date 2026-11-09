@@ -1,0 +1,7 @@
+[
+  {"kind":"income","category":"Жалақы","amount":"300000","date":"2026-11-01","note":"November salary"},
+  {"kind":"income","category":"Қосымша табыс","amount":"50000","date":"2026-11-01","note":"Freelance work"},
+  {"kind":"expense","category":"Азық-түлік","amount":"18000","date":"2026-11-02","note":"Weekly groceries"},
+  {"kind":"expense","category":"Көлік","amount":"5000","date":"2026-11-02","note":"Travel costs"},
+  {"kind":"expense","category":"Коммуналдық","amount":"22000","date":"2026-11-02","note":"Household bills"}
+]

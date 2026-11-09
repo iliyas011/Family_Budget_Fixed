@@ -1,0 +1,117 @@
+test_expired_and_forged_sessions (test_app.APITests.test_expired_and_forged_sessions) ... 127.0.0.1 - - [09/Nov/2026 12:45:56] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2026 12:45:56] "GET /api/budget HTTP/1.1" 401 -
+127.0.0.1 - - [09/Nov/2026 12:45:56] "GET /api/budget HTTP/1.1" 401 -
+ok
+test_http_add_read_and_reload (test_app.APITests.test_http_add_read_and_reload) ... 127.0.0.1 - - [09/Nov/2026 12:45:57] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2026 12:45:57] "POST /api/transactions HTTP/1.1" 201 -
+127.0.0.1 - - [09/Nov/2026 12:45:57] "GET /api/budget HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2026 12:45:57] "GET /api/budget HTTP/1.1" 200 -
+ok
+test_http_media_type_origin_and_host_guards (test_app.APITests.test_http_media_type_origin_and_host_guards) ... 127.0.0.1 - - [09/Nov/2026 12:45:57] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2026 12:45:57] "POST /api/transactions HTTP/1.1" 415 -
+127.0.0.1 - - [09/Nov/2026 12:45:57] "POST /api/transactions HTTP/1.1" 403 -
+127.0.0.1 - - [09/Nov/2026 12:45:57] "POST /api/transactions HTTP/1.1" 403 -
+127.0.0.1 - - [09/Nov/2026 12:45:57] "GET /api/budget HTTP/1.1" 403 -
+127.0.0.1 - - [09/Nov/2026 12:45:57] "GET /api/budget HTTP/1.1" 200 -
+ok
+test_http_size_guard (test_app.APITests.test_http_size_guard) ... 127.0.0.1 - - [09/Nov/2026 12:45:58] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2026 12:45:58] "POST /api/transactions HTTP/1.1" 413 -
+ok
+test_http_validation_and_malformed_json (test_app.APITests.test_http_validation_and_malformed_json) ... 127.0.0.1 - - [09/Nov/2026 12:45:59] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2026 12:45:59] "POST /api/transactions HTTP/1.1" 400 -
+127.0.0.1 - - [09/Nov/2026 12:45:59] "POST /api/transactions HTTP/1.1" 400 -
+127.0.0.1 - - [09/Nov/2026 12:45:59] "POST /api/transactions HTTP/1.1" 400 -
+127.0.0.1 - - [09/Nov/2026 12:45:59] "POST /api/transactions HTTP/1.1" 400 -
+127.0.0.1 - - [09/Nov/2026 12:45:59] "GET /api/budget HTTP/1.1" 200 -
+ok
+test_login_rate_limit_and_cross_origin (test_app.APITests.test_login_rate_limit_and_cross_origin) ... 127.0.0.1 - - [09/Nov/2026 12:46:00] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2026 12:46:00] "POST /api/login HTTP/1.1" 401 -
+127.0.0.1 - - [09/Nov/2026 12:46:00] "POST /api/login HTTP/1.1" 401 -
+127.0.0.1 - - [09/Nov/2026 12:46:00] "POST /api/login HTTP/1.1" 401 -
+127.0.0.1 - - [09/Nov/2026 12:46:00] "POST /api/login HTTP/1.1" 401 -
+127.0.0.1 - - [09/Nov/2026 12:46:01] "POST /api/login HTTP/1.1" 401 -
+127.0.0.1 - - [09/Nov/2026 12:46:01] "POST /api/login HTTP/1.1" 429 -
+127.0.0.1 - - [09/Nov/2026 12:46:01] "POST /api/login HTTP/1.1" 403 -
+127.0.0.1 - - [09/Nov/2026 12:46:01] "POST /api/login HTTP/1.1" 200 -
+ok
+test_login_wrong_credentials_and_cookie_flags (test_app.APITests.test_login_wrong_credentials_and_cookie_flags) ... 127.0.0.1 - - [09/Nov/2026 12:46:01] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2026 12:46:02] "POST /api/login HTTP/1.1" 401 -
+127.0.0.1 - - [09/Nov/2026 12:46:02] "POST /api/login HTTP/1.1" 401 -
+127.0.0.1 - - [09/Nov/2026 12:46:02] "POST /api/login HTTP/1.1" 200 -
+ok
+test_logout_revokes_token (test_app.APITests.test_logout_revokes_token) ... 127.0.0.1 - - [09/Nov/2026 12:46:03] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2026 12:46:03] "POST /api/logout HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2026 12:46:03] "GET /api/budget HTTP/1.1" 401 -
+127.0.0.1 - - [09/Nov/2026 12:46:03] "POST /api/transactions HTTP/1.1" 401 -
+ok
+test_password_change_invalidates_old_password_and_sessions (test_app.APITests.test_password_change_invalidates_old_password_and_sessions) ... 127.0.0.1 - - [09/Nov/2026 12:46:03] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2026 12:46:03] "GET /api/budget HTTP/1.1" 401 -
+ok
+test_password_hash_persists_and_new_server_auth_has_no_sessions (test_app.APITests.test_password_hash_persists_and_new_server_auth_has_no_sessions) ... 127.0.0.1 - - [09/Nov/2026 12:46:04] "POST /api/login HTTP/1.1" 200 -
+ok
+test_registration_flow (test_app.APITests.test_registration_flow) ... 127.0.0.1 - - [09/Nov/2026 12:46:05] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2026 12:46:05] "GET /register HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2026 12:46:05] "POST /api/register HTTP/1.1" 400 -
+127.0.0.1 - - [09/Nov/2026 12:46:05] "POST /api/register HTTP/1.1" 201 -
+127.0.0.1 - - [09/Nov/2026 12:46:05] "POST /api/register HTTP/1.1" 409 -
+127.0.0.1 - - [09/Nov/2026 12:46:05] "POST /api/register HTTP/1.1" 409 -
+127.0.0.1 - - [09/Nov/2026 12:46:05] "POST /api/register HTTP/1.1" 409 -
+127.0.0.1 - - [09/Nov/2026 12:46:06] "POST /api/register HTTP/1.1" 201 -
+127.0.0.1 - - [09/Nov/2026 12:46:06] "POST /api/register HTTP/1.1" 400 -
+127.0.0.1 - - [09/Nov/2026 12:46:06] "POST /api/register HTTP/1.1" 400 -
+127.0.0.1 - - [09/Nov/2026 12:46:06] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2026 12:46:06] "POST /api/login HTTP/1.1" 401 -
+127.0.0.1 - - [09/Nov/2026 12:46:06] "POST /api/login HTTP/1.1" 200 -
+ok
+test_static_allowlist_and_security_headers (test_app.APITests.test_static_allowlist_and_security_headers) ... 127.0.0.1 - - [09/Nov/2026 12:46:07] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2026 12:46:07] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2026 12:46:07] "GET /app.js HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2026 12:46:07] "GET /style.css HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2026 12:46:07] "GET /api/categories HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2026 12:46:07] "GET /schema.sql HTTP/1.1" 404 -
+127.0.0.1 - - [09/Nov/2026 12:46:07] "GET /../app.py HTTP/1.1" 404 -
+127.0.0.1 - - [09/Nov/2026 12:46:07] "GET /data/budget.sqlite3 HTTP/1.1" 404 -
+127.0.0.1 - - [09/Nov/2026 12:46:07] "GET /does-not-exist HTTP/1.1" 404 -
+ok
+test_unauthenticated_pages_and_api_are_protected (test_app.APITests.test_unauthenticated_pages_and_api_are_protected) ... 127.0.0.1 - - [09/Nov/2026 12:46:07] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2026 12:46:07] "GET /api/budget HTTP/1.1" 401 -
+127.0.0.1 - - [09/Nov/2026 12:46:07] "GET /api/categories HTTP/1.1" 401 -
+127.0.0.1 - - [09/Nov/2026 12:46:07] "GET /api/session HTTP/1.1" 401 -
+127.0.0.1 - - [09/Nov/2026 12:46:07] "GET / HTTP/1.1" 303 -
+127.0.0.1 - - [09/Nov/2026 12:46:07] "POST /api/transactions HTTP/1.1" 401 -
+127.0.0.1 - - [09/Nov/2026 12:46:07] "GET /login HTTP/1.1" 200 -
+ok
+test_boundaries_and_optional_note (test_app.StoreTests.test_boundaries_and_optional_note) ... ok
+test_database_constraints (test_app.StoreTests.test_database_constraints) ... ok
+test_decimal_arithmetic_and_comma (test_app.StoreTests.test_decimal_arithmetic_and_comma) ... ok
+test_empty_budget (test_app.StoreTests.test_empty_budget) ... ok
+test_invalid_amounts_do_not_insert (test_app.StoreTests.test_invalid_amounts_do_not_insert) ... ok
+test_invalid_fields_do_not_insert (test_app.StoreTests.test_invalid_fields_do_not_insert) ... ok
+test_lesson_demo_totals (test_app.StoreTests.test_lesson_demo_totals) ... ok
+test_order_and_category_aggregation (test_app.StoreTests.test_order_and_category_aggregation) ... ok
+test_persists_after_reopening (test_app.StoreTests.test_persists_after_reopening) ... ok
+test_seed_totals_and_no_duplicate_seed (test_app.StoreTests.test_seed_totals_and_no_duplicate_seed) ... ok
+test_sql_injection_is_stored_as_text (test_app.StoreTests.test_sql_injection_is_stored_as_text) ... ok
+test_old_database_migration_preserves_accounts (test_phone.PhoneTests.test_old_database_migration_preserves_accounts) ... ok
+test_phone_login_and_duplicate_normalization (test_phone.PhoneTests.test_phone_login_and_duplicate_normalization) ... ok
+test_phone_required_and_strict_international_format (test_phone.PhoneTests.test_phone_required_and_strict_international_format) ... ok
+test_recovery_phone_and_username_share_cooldown (test_phone.PhoneTests.test_recovery_phone_and_username_share_cooldown) ... ok
+test_register_login_username_session_and_static_routes (test_recovery.HandlerTests.test_register_login_username_session_and_static_routes) ... ok
+test_reset_through_routes (test_recovery.HandlerTests.test_reset_through_routes) ... ok
+test_bind_requires_password_is_one_time_and_persists (test_recovery.RecoveryTests.test_bind_requires_password_is_one_time_and_persists) ... ok
+test_bot_accepts_only_private_binding (test_recovery.RecoveryTests.test_bot_accepts_only_private_binding) ... ok
+test_bot_disabled_and_delivery_failure (test_recovery.RecoveryTests.test_bot_disabled_and_delivery_failure) ... ok
+test_expired_codes_and_links (test_recovery.RecoveryTests.test_expired_codes_and_links) ... ok
+test_family_password_reset (test_recovery.RecoveryTests.test_family_password_reset) ... ok
+test_full_reset_changes_password_revokes_only_target_sessions_and_persists (test_recovery.RecoveryTests.test_full_reset_changes_password_revokes_only_target_sessions_and_persists) ... ok
+test_invalid_password_and_leading_zero_code (test_recovery.RecoveryTests.test_invalid_password_and_leading_zero_code) ... ok
+test_ip_limit (test_recovery.RecoveryTests.test_ip_limit) ... ok
+test_registration_login_normalization_and_session_identity (test_recovery.RecoveryTests.test_registration_login_normalization_and_session_identity) ... ok
+test_resend_cancels_old_code_and_cooldown (test_recovery.RecoveryTests.test_resend_cancels_old_code_and_cooldown) ... ok
+test_unknown_and_unbound_have_same_public_response_and_no_messages (test_recovery.RecoveryTests.test_unknown_and_unbound_have_same_public_response_and_no_messages) ... ok
+test_wrong_codes_lock_after_five_attempts (test_recovery.RecoveryTests.test_wrong_codes_lock_after_five_attempts) ... ok
+
+----------------------------------------------------------------------
+Ran 42 tests in 22.303s
+
+OK
